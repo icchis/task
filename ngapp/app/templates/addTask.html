@@ -1,0 +1,44 @@
+<div id="section2" class="fadeInUpBig">
+    <div class="add_page">
+        <div class="">
+            <p class="page_title">追加ページ</p>
+            <form name="addForm" class="addtask_from">
+                <div class="task_item">タスク名<input ng-model = "task.name" type="text" placeholder="タスク名"></div>
+                <div class="task_item mgb10">予想工程時間<br/><span class="fs10">（1タスク999時間まで）</span><br/>
+                    <input class="hour" ng-model = "input.hours"   type="number" name="input" min="0" max="999" placeholder="H"><span class="left">時間</span>
+                    <input class="minute" ng-model = "input.minutes" type="number" name="input" min="0" max="59" placeholder="M"><span class="left">分</span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="task_item">締め切り日<input ng-model = "task.deadline" type="date" name="example" value="2012-02-16"></div>
+                <div class="task_memo task_item">メモ<textarea ng-model = "task.memo" type="text" name="input" min="0" max="99" placeholder="メモ"></textarea></div>
+                <button type="button" class="add_task_push" ng-click = "pushTask(task)">タスクに追加</button>
+            </form>
+
+            <!-- <pre>{{task}}</pre> -->
+
+            <div class="prev_page"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".prev_page").click(function(){
+        $("#section1,#tasks").css("display","block");
+        $("#section2").addClass("rollOut");
+        $("footer").removeClass("tada");
+        setTimeout("removeadd()", 400);
+    });
+
+    $(".add_task_push").click(function(){
+        $("#section1,#tasks").css("display","block");
+        $("#section2").addClass("bounceOutUp");
+        // $("#section1,#tasks").fadeIn("fast");
+        setTimeout("removeadd()", 1000);
+    });
+
+    function removeadd(){
+        $("#section2").removeClass("rollOut bounceOutUp");
+        $("#section2").css('display', 'none');
+        $("#section1,#tasks").css("display","block");
+    }
+</script>

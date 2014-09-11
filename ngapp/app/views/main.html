@@ -1,0 +1,44 @@
+
+<div id="section1" class="zoomIn">
+<!--   <div class="today_task">
+    <p class="p_task_title">今日すべきタスク</p>
+    <div class="today_details">
+      <div class="graph">
+        <notch></notch>
+      </div>
+    </div>
+  </div> -->
+  <div id="top_task" class="pri_task">
+    <p class="p_task_title">優先タスク</p>
+    <div class="task_list">
+      <dl ng-repeat = "task in priority_tasks">
+        <div class = "timer-wrapper"><timer task = "task" ex-id ="task.id"/></div>
+        <dt class="s_show" ng-swipe-right="showActions()" ng-click="detailclick()">
+          {{task.name}}
+        </dt>
+        <div class="s_hide" ng-swipe-left="hideActions()">
+          <button class="delete" ng-click="top_delete()" type="button">削除</button>
+        </div>
+        <dd ng-model="task"><notch></notch><p class="memo"><br/><span class="memospan">{{task.memo}}</span></p></dd>
+        <div class="clearfix"></div>
+      </dl>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="leave_task"  ng-show = "short_tasks.length">
+    <p class="l_task_title">瞬殺タスク</p>
+    <div class="task_list">
+      <dl ng-repeat = "task in short_tasks">
+        <div class = "timer-wrapper"><timer task = "task" ex-id ="task.id"/></div>
+        <dt class="s_show" ng-swipe-right="showActions()" ng-click="detailclick()">{{task.name}}
+        </dt>
+        <div class="s_hide" ng-swipe-left="hideActions()">
+          <button class="delete" ng-click="top_delete()" type="button">削除</button>
+        </div>
+        <dd ng-model="task"><notch></notch><p class="memo"><br/><span class="memospan">{{task.memo}}</span></p></dd>
+        <div class="clearfix"></div>
+      </dl>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

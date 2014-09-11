@@ -1,0 +1,8 @@
+<div class = "timer">
+  <div class = "time-wrapper">
+    <span class = "time"><span ng-hide = "timer.negative">&nbsp;</span><span ng-show = "timer.negative">-</span>{{timer.hours}}:{{timer.minutes}}:{{timer.seconds}}</span>
+  </div>
+  <div class = "icon-wrapper" ng-click = "timer.toggle()">
+    <div class = "clock-icon"></div>
+  </div>
+</div>

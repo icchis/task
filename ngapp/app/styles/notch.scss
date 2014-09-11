@@ -1,0 +1,93 @@
+$notch-width:200px;
+$dot-color:#fff;
+$base-color:#32cd32;
+$dot-border-width: 5px;
+$shadow-color: #888888;
+
+#notch{
+  position:relative;
+  height:50px;
+  width:$notch-width;
+  margin: 20px auto -5px;
+  left:-15px;
+
+  *{
+    box-sizing: border-box;
+  }
+  .cont{
+    height: 100%;
+    width: $notch-width;
+    padding: 0;
+    margin: 0 auto;
+    position: absolute;
+  }
+  #progress-bar{
+    appearance:none;
+    width: $notch-width;
+    color: #000;
+    height: 6px;
+    margin: 0 auto;
+    box-shadow: 1px 1px 1px $shadow-color;
+  }
+  span {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: $dot-border-width solid $dot-color;
+    background:$dot-color;
+    position: absolute;
+    left:0;
+    top: -5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px $shadow-color;
+    transition: all 0.4s ease-in-out;
+  }
+  p{
+    font-family: Arial;
+    font-size: 14pt;
+    text-shadow: 1px 1px 0px $shadow-color;
+    color: $base-color;
+    text-align: center;
+    margin-top:16px;
+  }
+  h1{
+     font-family: Arial;
+    font-size: 24pt;
+    text-shadow: 1px 1px 0px $shadow-color;
+    color: $base-color;
+    text-align: center;
+    margin:0;
+    padding:0;
+  }
+  h3{
+    font-family: Arial;
+    font-size: 16pt;
+    text-shadow: 1px 1px 0px $shadow-color;
+    color: $base-color;
+    text-align: center;
+  }
+  .second{
+    left: $notch-width / 4;
+  }
+  .third{
+    left: $notch-width / 4 * 2;
+  }
+  .fourth{
+    left: $notch-width / 4 * 3;
+  }
+  .fifth{
+    left: $notch-width / 4 * 4;
+  }
+  #progress-bar::-webkit-progress-value{ /* Changes line color */
+    background: $base-color;
+    transition: all 0.4s ease-in-out;
+  }
+  #progress-bar::-webkit-progress-bar{ /* Changes background color */
+    background: $dot-color;
+  }
+  .border-change{
+    border-color:$base-color;
+    transition: all 0.4s ease-in-out;
+  }
+
+}

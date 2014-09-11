@@ -1,0 +1,44 @@
+
+<div id="tasks" class="zoomIn">
+    <div class="tasks_list">
+        <!-- <div class="mgt20"></div> -->
+        <!-- <p class="page_title">タスク一覧</p> -->
+        <div class="task_list" ng-repeat = "task in tasks" ng-controller = "TaskCtrl" ng-hide = "task.complete">
+            <div class="to_trash" ng-click="trashclick()">
+                <div class="to_trash1" ng-class="myCssVar"></div>
+            </div>
+            <div class="tn_wrap"><span class="title_logo"></span></div>
+            <p class="task_name">{{task.name}}</p>
+            <div class="task_detail">
+                <p class="dl_date">締め切りまで残り<br/><span class="for_dead_d">{{task.restDays()}}日</span></p>
+                <div class="clearfix"></div>
+                <p class="dl_time">残っている工程時間<br/><span class="for_dead_t">{{task.rest_time}}分</span></p>
+                <!-- <div class="emerge">ヤバい度</div> -->
+                <div class="clearfix"></div>
+                <p class="memo">メモ<br/><span class="memospan">{{task.memo}}</span></p>
+            </div>
+                <div class="clearfix"></div>
+        </div>
+        <!-- <div class="mgb20"></div> -->
+    </div>
+</div>
+<style>
+</style>
+<script>
+ new WOW().init();
+
+</script>
+<!--
+<script>
+$(".to_trash").click(function(){
+    $(".task_list").addClass("hinge");
+    // setTimeout("removeadd()", 600);
+});
+
+$(".to_trash").click(function(){
+    // $(".task_list").addClass("hinge");
+    // setTimeout("removeadd()", 600);
+    $(".to_trash1").animate({"backgroundColor": "rgb(243, 175, 72)"}, "fast");
+});
+
+</script> -->

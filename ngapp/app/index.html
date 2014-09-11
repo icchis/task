@@ -1,0 +1,199 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <!-- <meta name="viewport" content="user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimal-ui">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/default.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/timer.css">
+    <link rel="stylesheet" href="styles/demo.css">
+    <link rel="stylesheet" href="styles/progress-bar.css">
+    <link rel="stylesheet" href="styles/notch.css">
+    <!-- endbuild -->
+    <script>
+    function removeaddanime(){
+        $(".task_add").removeClass("rubberBand");
+    }
+    function removeprev(){
+        $("#section2,#section3").removeClass("rollOut bounceOutUp");
+        $("#section3").css('display', 'none');
+        $("#section1,#tasks").css("display","block");
+    }
+    function menu_bg(){
+        $("#menu_bar").css("display","none");
+    }
+    function removeprogress(){
+        $("#section3").removeClass("bounceOutUp");
+        $("#section3").css('display', 'none');
+    }
+    </script>
+  </head>
+
+  <body ng-app="schedulerApp" id="hitarea">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    <div id="sub_wrap">
+    </div>
+
+    <header>
+        <div class="header_wrapper">
+            <div class="menu_icon"><span></span></div>
+            <div class="header_title">
+                <h1 id="top_title" class="chapter_title">進捗どうですか？</h1>
+            </div>
+            <div class="task_add"></div>
+        </div>
+        <div class="preview_bar">
+            <div class="preview_wrapper">
+                <span>アラート表示</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="clearfix"></div>
+
+    <add-task></add-task>
+
+    <div id="section3" class="fadeInUpBig">
+        <div class="">
+            <div class="">
+                <p class="page_title">進捗ページ</p>
+                <form name="addForm" class="addtask_from">
+                    <div class="task_item">使用する時間<input type="number" name="input" min="0" max="99" placeholder="1"></div>
+                    <div class="t_a_c">
+                    <button type="button" class="progress_push">決定</button>
+                    </div>
+                </form>
+                <div class="prev_page"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div ng-view = ""></div>
+
+
+<!--
+    <footer>
+      <div class="footer_wrapper">
+        進捗
+      </div>
+    </footer>
+ -->
+<!--
+    <div id="side_nav">
+      <div class="side_nav_wrapper">
+        <div id="logo" class="menu"><span></span>Menu</div>
+        <nav>
+          <ul class="side_list">
+            <li><a class="top" href="#/"><span></span>トップページ</a></li>
+            <li><a class="tasks" href="#/tasks"><span></span>タスク一覧</a></li>
+          </ul>
+          <div class="recent_tasks">
+              <p class="recent_task_title">最近追加したタスク</p>
+              <dl>
+                  <dt>タスク１</dt>
+                  <dd>残り日数：</dd>
+              </dl>
+              <dl>
+                  <dt>タスク２</dt>
+                  <dd>残り日数：</dd>
+              </dl>
+              <dl>
+                  <dt>タスク３</dt>
+                  <dd>残り日数：</dd>
+              </dl>
+              <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+          <ul class="social">
+              <li><a href="#" class="bt-icon icon-gplus"></a></li>
+              <li><a href="#" class="bt-icon icon-facebook"></a></li>
+              <li><a href="#" class="bt-icon icon-twitter"></a></li>
+              <div class="clearfix"></div>
+          </ul>
+        </nav>
+      </div>
+    </div> -->
+
+    <div id="menu_bar">
+      <div class="menu_wrapper">
+        <div class="home"><a href="#/"><span class="Span1"><span class="Span2"></span></span></a></div>
+        <div class="tasks"><a href="#/tasks"><span class="Span3"></span></a></div>
+        <div class="progress"><span class="Span4">
+        <span class="Span5">
+        </span>
+        </span>
+        </div>
+      </div>
+    </div>
+
+    <style>
+
+    </style>
+<!--
+  <div style="float:right">
+    <div id="eventname">-</div>
+    <div id="coords">X:<span id="x"></span> Y:<span id="y"></span>Z:<span id="z"></span></div>
+    </div> -->
+
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/controllers/main.js"></script>
+    <script type="text/javascript" src="scripts/controllers/tasks.js"></script>
+    <script type="text/javascript" src="scripts/controllers/common.js"></script>
+    <script src="scripts/services/task.js"></script>
+    <script src="scripts/directives/addtask.js"></script>
+    <script src="scripts/directives/timer.js"></script>
+    <script src="scripts/controllers/task.js"></script>
+    <script src="scripts/services/scheduler.js"></script>
+    <script src="scripts/controllers/easing.js"></script>
+    <script src="scripts/controllers/wow.js"></script>
+    <script src="scripts/controllers/demo.js"></script>
+    <script src="scripts/directives/progressbar.js"></script>
+    <script src="scripts/directives/notch.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
